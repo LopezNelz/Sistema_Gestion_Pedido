@@ -1,0 +1,1013 @@
+/* Variables de colores - Paleta cálida basada en imagen */
+:root {
+    --primary-color: #FF9800; /* Naranja cálido principal */
+    --secondary-color: #FFB300; /* Amarillo mostaza secundario */
+    --accent-color: #D84315; /* Rojo terracota para acentos */
+    --light-bg: #FFF3E0; /* Beige/crema claro para fondos */
+    --light-bg-alt: #FAFAFA; /* Blanco roto para fondos alternativos */
+    --light-yellow: #FFECB3; /* Amarillo muy claro para degradados */
+    --text-dark: #5D4037; /* Marrón chocolate para textos principales */
+    --text-medium: #6D4C41; /* Marrón chocolate más claro */
+    --white: #FFFFFF; /* Blanco puro */
+    --footer-dark: #5D4037; /* Marrón chocolate para footer */
+    --footer-darker: #3E2723; /* Marrón muy oscuro para degradado footer */
+}
+
+/* Estilos generales - Texto oscuro sobre fondo claro */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Navbar personalizado - Degradado naranja a amarillo */
+.navbar-custom {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    padding: 1.5rem 0;
+}
+
+.navbar-custom .nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--white) !important;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    transform: translateY(-2px);
+}
+
+.navbar-custom .nav-link.activo {
+    color: var(--white) !important;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.navbar-custom .navbar-brand {
+    color: var(--white) !important;
+}
+
+.navbar-custom .dropdown-menu {
+    background-color: var(--white);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-custom .dropdown-item {
+    color: var(--text-dark) !important;
+}
+
+.navbar-custom .dropdown-item:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color) !important;
+}
+
+.navbar-custom .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.navbar-custom .navbar-nav {
+    justify-content: flex-start;
+    gap: 1.2rem;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    padding: 0.85rem 1.2rem;
+    margin: 0;
+}
+
+/* Logo placeholder - Blanco sobre degradado */
+.logo-placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--white);
+    width: 3cm;
+    height: 3cm;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    box-shadow: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    object-fit: cover;
+}
+
+/* Tooltips personalizados mejorados - Tamaño aproximado 5x5 cm (150x150px) */
+.tooltip-personalizado {
+    position: relative;
+    cursor: help;
+}
+
+/* Tooltip para PC (hover) - Tamaño mínimo 150x150px con colores cálidos */
+@media (min-width: 769px) {
+    .tooltip-personalizado:hover::after,
+    .tooltip-personalizado.activo::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        min-height: 180px;
+        max-width: 200px;
+        background: linear-gradient(135deg, var(--footer-dark) 0%, var(--footer-darker) 100%);
+        color: var(--white);
+        padding: 15px;
+        border-radius: 8px;
+        border: 2px solid var(--secondary-color);
+        font-size: 0.8rem;
+        line-height: 1.4;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow: visible;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(93, 64, 55, 0.4);
+        visibility: visible;
+        opacity: 1;
+        animation: fadeInTooltip 0.3s ease forwards;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    /* Ajuste para tooltips en elementos del menú desplegable */
+    .dropdown-item.tooltip-personalizado:hover::after {
+        left: auto;
+        right: calc(100% + 10px);
+        bottom: 50%;
+        transform: translateY(50%);
+        top: auto;
+    }
+}
+
+/* Tooltip para móvil (touch) - Tamaño mínimo 140x140px con colores cálidos */
+@media (max-width: 768px) {
+    .tooltip-personalizado.activo::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        min-height: 140px;
+        max-width: 180px;
+        background: linear-gradient(135deg, var(--footer-dark) 0%, var(--footer-darker) 100%);
+        color: var(--white);
+        padding: 15px;
+        border-radius: 8px;
+        border: 2px solid var(--secondary-color);
+        font-size: 0.85rem;
+        line-height: 1.4;
+        white-space: normal;
+        word-wrap: break-word;
+        z-index: 10000;
+        box-shadow: 0 4px 12px rgba(93, 64, 55, 0.4);
+        visibility: visible;
+        opacity: 1;
+        animation: fadeInTooltip 0.3s ease forwards;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    /* Ajuste para tooltips en elementos del menú desplegable en móvil */
+    .dropdown-item.tooltip-personalizado.activo::after {
+        left: auto;
+        right: calc(100% + 10px);
+        transform: translateY(50%);
+        bottom: 50%;
+        top: auto;
+    }
+}
+
+/* Animación de aparición del tooltip */
+@keyframes fadeInTooltip {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Ajuste para tooltips en elementos del menú desplegable - animación */
+.dropdown-item.tooltip-personalizado:hover::after,
+.dropdown-item.tooltip-personalizado.activo::after {
+    animation: fadeInTooltipLateral 0.3s ease forwards;
+}
+
+@keyframes fadeInTooltipLateral {
+    from {
+        opacity: 0;
+        transform: translateY(50%) translateX(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(50%) translateX(0);
+    }
+}
+
+/* Botones personalizados - Degradado rojo terracota a naranja */
+.btn-custom {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    border: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(216, 67, 21, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-custom:hover::before {
+    left: 100%;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(135deg, #BF360C 0%, #F57C00 100%);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(216, 67, 21, 0.4);
+}
+
+.btn-custom:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(216, 67, 21, 0.3);
+}
+
+/* Botón secundario - Amarillo mostaza */
+.btn-custom-secondary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    border: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255, 179, 0, 0.3);
+}
+
+.btn-custom-secondary:hover {
+    background: linear-gradient(135deg, #FFA000 0%, #F57C00 100%);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 179, 0, 0.4);
+}
+
+/* Carrusel personalizado */
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-caption-custom {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 243, 224, 0.95) 100%);
+    color: var(--text-dark);
+    padding: 25px;
+    border-radius: 12px;
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 4px 16px rgba(255, 179, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-caption-custom h3 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.carousel-caption-custom p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* Carrusel de proyectos - tamaño fijo aproximado 10cm x 14cm (378px x 529px) */
+.carousel-proyectos {
+    max-width: 529px;
+}
+
+.carousel-proyectos .carousel-item {
+    height: auto;
+}
+
+.carousel-proyectos img {
+    width: 100%;
+    max-width: 529px;
+    max-height: 378px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+
+/* Footer - Degradado marrón chocolate a marrón muy oscuro */
+.footer-custom {
+    background: linear-gradient(135deg, var(--footer-dark) 0%, var(--footer-darker) 100%);
+    color: var(--white);
+    padding: 40px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--secondary-color));
+}
+
+.footer-custom h5 {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Asegurar que el nombre de la universidad esté en una sola línea sin chocar con otros elementos */
+.footer-custom .col-md-3:first-child {
+    padding-right: 1rem;
+    overflow: visible;
+}
+
+.footer-custom .col-md-3:first-child h5 {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    word-break: normal;
+    font-size: 1rem;
+}
+
+/* En móviles, ajustar tamaño de fuente si es necesario */
+@media (max-width: 576px) {
+    .footer-custom .col-md-3:first-child h5 {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Mover el div de "Enlaces Rápidos" más hacia la derecha */
+.footer-custom .footer-enlaces {
+    margin-left: 2.5rem;
+    padding-left: 1.5rem;
+}
+
+/* En tablets, reducir el espacio */
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .footer-custom .footer-enlaces {
+        margin-left: 1.5rem;
+        padding-left: 1rem;
+    }
+}
+
+/* En móviles, mantener el espacio pero ajustado */
+@media (max-width: 767.98px) {
+    .footer-custom .footer-enlaces {
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Distribución equilibrada en el footer */
+.footer-custom .row:first-child {
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+/* Fuente ligeramente reducida en h5 y enlaces del footer */
+.footer-custom h5 {
+    font-size: 1rem;
+}
+
+.footer-custom a,
+.footer-custom p {
+    font-size: 0.85rem;
+}
+
+.footer-custom a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-custom a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.footer-custom .text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.footer-custom p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+}
+
+.footer-custom .social-links a {
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.75) !important;
+    display: inline-block;
+}
+
+.footer-custom .social-links a i {
+    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.footer-custom .social-links a:hover {
+    color: #333333 !important;
+    transform: scale(1.1);
+}
+
+.footer-custom .social-links a:hover i {
+    color: #333333 !important;
+}
+
+/* Hero Section - Degradado crema a amarillo claro */
+.hero-section {
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--light-yellow) 100%);
+    color: var(--text-dark);
+    padding:  190px 0 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 179, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--text-medium);
+    position: relative;
+    z-index: 1;
+}
+
+/* Sección de información - Fondo claro */
+.info-section {
+    padding: 60px 0;
+    background: linear-gradient(180deg, var(--light-bg-alt) 0%, var(--light-bg) 100%);
+}
+
+.info-card {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: var(--light-bg-alt);
+    border: 3px solid var(--secondary-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 179, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover::before {
+    transform: scaleX(1);
+}
+
+.info-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(255, 179, 0, 0.25);
+    transform: translateY(-8px);
+    background-color: var(--white);
+}
+
+.info-card h3 {
+    color: var(--text-dark);
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.info-card i {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* Sección Acerca de - Diseño de dos columnas con imagen y texto */
+.about-section {
+    padding: 60px 0;
+}
+
+.about-image-wrapper {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(93, 64, 55, 0.2);
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(93, 64, 55, 0.3);
+}
+
+.about-content {
+    padding-left: 2rem;
+}
+
+.about-content p {
+    text-align: justify;
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive: En móviles, apilar imagen arriba y texto abajo */
+@media (max-width: 767.98px) {
+    .about-image-wrapper {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .about-image {
+        max-width: 100%;
+        max-height: 400px;
+    }
+    
+    .about-content {
+        padding-left: 0;
+        padding-top: 1rem;
+    }
+    
+    .about-content p {
+        text-align: justify;
+        font-size: 1rem;
+    }
+}
+
+/* Secciones con anclas - Fondos claros alternados con degradados sutiles */
+.section-anchor {
+    padding: 80px 0;
+    scroll-margin-top: 80px;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.section-anchor:nth-child(even) {
+    background: linear-gradient(180deg, var(--light-bg-alt) 0%, var(--light-bg) 100%);
+}
+
+.section-anchor h2 {
+    color: var(--text-dark);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-anchor h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+/* Acordeón personalizado - Fondo claro, texto oscuro */
+.accordion-button {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    font-weight: 500;
+    border: 1px solid var(--secondary-color);
+}
+
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+}
+
+.accordion-button:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 152, 0, 0.25);
+}
+
+.accordion-body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 1px solid var(--secondary-color);
+    border-top: none;
+}
+
+/* Formulario de contacto - Fondo claro, texto oscuro */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-bg-alt);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(255, 179, 0, 0.1);
+}
+
+.contact-form label {
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 2px solid var(--light-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 152, 0, 0.25);
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.form-control::placeholder {
+    color: rgba(93, 64, 55, 0.5);
+}
+
+/* Contenedor de video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 10px;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-item {
+        height: 300px;
+    }
+    
+    /* Ajustes para navbar en móvil */
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
+    
+    .navbar-nav .nav-link i {
+        width: 20px;
+        text-align: center;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navegación activa - Blanco sobre degradado */
+.nav-link.activo {
+    color: var(--white) !important;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-bottom: 2px solid var(--white);
+}
+
+.dropdown-item.activo {
+    color: var(--primary-color) !important;
+    border-left: 3px solid var(--primary-color);
+    background-color: var(--light-bg);
+    font-weight: 600;
+}
+
+/* Breadcrumb personalizado - Fondo claro, texto oscuro */
+.breadcrumb-custom {
+    background: linear-gradient(90deg, var(--light-bg) 0%, var(--light-bg-alt) 100%);
+    padding: 15px 0;
+    margin-top: 76px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.breadcrumb-custom .breadcrumb {
+    margin-bottom: 0;
+    background-color: transparent;
+    padding: 0;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-custom .breadcrumb-item a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Sección de contenido de página */
+.contenido-pagina {
+    padding: 40px 0;
+}
+
+.seccion-contenido {
+    margin-bottom: 40px;
+}
+
+.seccion-imagenes {
+    margin-top: 40px;
+}
+
+.imagen-placeholder {
+    background-color: var(--light-bg);
+    border: 2px dashed var(--primary-color);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Área de contenido editable - Fondo blanco, texto oscuro */
+.area-contenido {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 179, 0, 0.1);
+    margin-bottom: 30px;
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.area-contenido:hover {
+    border-left-color: var(--primary-color);
+    box-shadow: 0 6px 16px rgba(255, 179, 0, 0.15);
+}
+
+.area-contenido h2,
+.area-contenido h3 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.area-contenido p {
+    color: var(--text-medium);
+    line-height: 1.8;
+}
+
+.instruccion-contenido {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #856404;
+}
+
+.instruccion-contenido i {
+    margin-right: 8px;
+}
+
+/* CORRECCIÓN ESPECÍFICA PARA NAVBAR - Mover menú a IZQUIERDA */
+.navbar-custom .navbar-collapse {
+    justify-content: flex-start !important;
+    flex-grow: 0 !important;
+    margin-left: 2rem !important;
+}
+
+.navbar-custom .navbar-nav {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.navbar-custom .nav-item {
+    margin-right: 1.5rem !important;
+}
+
+/* Para asegurar que el logo no esté muy pegado al borde */
+.navbar-custom .container {
+    padding-left: 1rem !important;
+}
+/* CORRECCIÓN SIMPLE PARA NAVBAR - Todo en una línea sin scroll */
+.navbar-custom .navbar-nav {
+    gap: 0.5rem;
+}
+
+.navbar-custom .nav-link {
+    white-space: nowrap;
+    padding: 0.5rem 0.7rem !important;
+    font-size: 0.9rem;
+}
+
+.navbar-custom .nav-link i {
+    margin-right: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.navbar-custom .navbar-brand {
+    margin-right: 1rem;
+    max-width: 150px;
+}
+
+/* Estilos para la sección de videos */
+.seccion-videos {
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+.seccion-videos h2 {
+    color: #2c3e50;
+    font-weight: 700;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Contenedor del video */
+.video-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor del iframe con proporción 16:9 */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Título y descripción del video */
+.video-titulo {
+    padding: 1.5rem;
+    flex-grow: 1;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eaeaea;
+}
+
+.video-titulo h4 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.video-descripcion {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .seccion-videos .col-md-6 {
+        margin-bottom: 2rem;
+    }
+    
+    .video-titulo h4 {
+        font-size: 1.1rem;
+    }
+}

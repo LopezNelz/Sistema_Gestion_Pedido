@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema - Gestión de Pedidos para la Empresa Pollos Yack's</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <!-- LOGOTIPO DE LA EMPRESA -->
+            <a class="navbar-brand" href="index.html">
+                <img class="logo-placeholder" src="assets/images/Logo.png" alt="Logo"></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-page="inicio">
+                            <i class="fas fa-home me-2"></i>INICIO
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle tooltip-personalizado" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-tooltip="Metodología tradicional de desarrollo de software con enfoque en procesos.">
+                            <i class="fas fa-sitemap me-2"></i>A&D Estructurado
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item tooltip-personalizado" href="modelo-ambiental.html" data-tooltip="Diagramas del entorno del sistema" data-page="modelo-ambiental">
+                                <i class="fas fa-arrow-right me-2"></i>Modelo Ambiental</a></li>
+                            <li><a class="dropdown-item tooltip-personalizado" href="modelo-comportamiento.html" data-tooltip="Flujos y procesos del sistema" data-page="modelo-comportamiento">
+                                <i class="fas fa-arrow-right me-2"></i>Modelo de Comportamiento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle tooltip-personalizado" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-tooltip="Enfoque moderno basado en objetos, clases y sus relaciones.">
+                            <i class="fas fa-object-group me-2"></i>A&D Orientado a Objetos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item tooltip-personalizado" href="diagrama-clases.html" data-tooltip="Estructura estática del sistema" data-page="diagrama-clases">
+                                <i class="fas fa-arrow-right me-2"></i>Diagrama de Clases</a></li>
+                            <li><a class="dropdown-item tooltip-personalizado" href="casos-uso.html" data-tooltip="Interacciones usuario-sistema" data-page="casos-uso">
+                                <i class="fas fa-arrow-right me-2"></i>Diagramas de Casos de Uso</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#marco-teorico" data-page="marco-teorico">
+                            <i class="fas fa-book me-2"></i>Marco Teórico
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#video-tutorial" data-page="video-tutorial">
+                            <i class="fas fa-video me-2"></i>Video Tutorial
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contacto" data-page="contacto">
+                            <i class="fas fa-envelope me-2"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-custom">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home me-1"></i>Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="#">A&D Estructurado</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Modelo Ambiental</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="contenido-pagina">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Sección de Imágenes -->
+                    <div class="seccion-imagenes">
+                        <h2 class="mb-4">Estructura del Paragidma del Analisis y Diseño Estructurado</h2>
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="imagen-placeholder">
+                                    <img src="assets/diagramas/AD_Estructurado.png" alt="Modelo Ambiental 1" class="img-fluid rounded shadow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1 class="mb-4"><p></p>Modelo Ambiental</h1>
+                    
+                    <!-- Sección de Contenido Textual -->
+                    <div class="seccion-contenido">
+                        <div class="area-contenido">
+                            <h2 class="mb-3">Declaracion de Propositos</h2>
+                            <p>
+                                Gestionar y coordinar integralmente todo el ciclo de pedidos de productos avícolas, desde la recepción de solicitudes de clientes hasta la entrega final y reporte de ventas, optimizando la comunicación entre proveedores, clientes, servicio de delivery y gerencia para maximizar la eficiencia operativa y la satisfacción del cliente.
+                            </p>   
+                        </div>
+                    </div>
+
+                    <!-- Sección de Imágenes -->
+                    <div class="seccion-imagenes">
+                        <h2 class="mb-4">Diagrama del Modelo Ambiental</h2>
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="imagen-placeholder">
+                                    <img src="assets/diagramas/M_Ambiental.png" alt="Modelo Ambiental 1" class="img-fluid rounded shadow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seccion-contenido">
+                        <div class="area-contenido">
+                            <h2 class="mb-3">Lista de Acontecimientos</h2>
+                            <p>
+                                1. Desde Proveedores:
+                            </p>
+                            <ul>
+                                <li>Recepción de facturas de proveedores</li>
+                                <li>Confirmación/negación de disponibilidad de productos</li>
+                            </ul> 
+                            <p>
+                                2. Desde Clientes:
+                            </p>
+                            <ul>
+                                <li>Solicitud de pedido de productos</li>
+                                <li>Consulta sobre estado de pedidos</li>
+                                <li>Modificación/cancelación de pedidos</li>
+                            </ul>
+                            <p>
+                                3. Desde Delivery:
+                            </p>
+                            <ul>
+                                <li>Notificación de estado de entrega ("en camino", "entregado", "problema en entrega")</li>
+                                <li>Confirmación de recepción por cliente</li>
+                            </ul>
+                            <p>
+                                4. Desde Gerencia:
+                            </p>
+                            <ul>
+                                <li>Establecimiento de políticas y reglas operativas</li>
+                                <li>Solicitud de reportes específicos</li>
+                                <li>Cambios en precios o productos</li>
+                            </ul>
+                            <p>
+                                5. Acontecimientos Internos del Sistema:
+                            </p>
+                            <ul>
+                                <li>Generación automática de pedidos a proveedores por bajo inventario</li>
+                                <li>Alerta por pedidos pendientes de procesamiento</li>
+                                <li>Generación programada de reportes de ventas</li>
+                            </ul>    
+                             
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5>Universidad Mayor de San Andrés</h5>
+                    <p>Facultad de Ciencias Puras y Naturales<br>
+                    Carrera de Informática<br>
+                    Analisis y Diseño de Sistemas</p>
+                </div>
+                <div class="col-md-3 mb-4 footer-enlaces">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio" class="text-decoration-none text-muted">Inicio</a></li>
+                        <li><a href="#marco-teorico" class="text-decoration-none text-muted">Marco Teórico</a></li>
+                        <li><a href="#video-tutorial" class="text-decoration-none text-muted">Video Tutorial</a></li>
+                        <li><a href="#contacto" class="text-decoration-none text-muted">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contacto Universidad</h5>
+
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Av. Villazón Nro 1995 Monoblock Central - Segundo Patio Edif. Carrera de Informatica<br>
+                        <i class="fas fa-phone"></i> Teléfono: +591 (2) 244-0338<br>
+                        <i class="fas fa-envelope"></i> Email:  informatica@informatica.edu.bo
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/pollosyacks/?locale=es_LA" class="text-decoration-none text-muted me-3" aria-label="Facebook">
+                            <i class="fab fa-facebook-f fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/pollos_yacks/" class="text-decoration-none text-muted me-3" aria-label="Instagram">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy;Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
